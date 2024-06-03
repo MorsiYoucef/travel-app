@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { NAV_LINKS } from '@/constants'
-import { Button } from '@/components/ui/button'
+import { Button } from './Button'
 
 const Navbar = () => {
   return (
@@ -21,10 +21,20 @@ const Navbar = () => {
         ))}
       </ul>
       <div className=" lg:flexCenter hidden">
-        <Button className=" rounded-full bg-black text-white" size="lg" asChild>
-          <Link href="/">Login</Link>
-        </Button>
+        <Button
+          type="button"
+          title="login"
+          icon="/user.svg"
+          variant="btn_dark_green"
+        ></Button>
       </div>
+      <Image
+        src="/menu.svg"
+        alt="menu"
+        width={32}
+        height={32}
+        className=" inline-block cursor-pointer lg:hidden"
+      ></Image>
     </nav>
   )
 }
